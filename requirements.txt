@@ -1,0 +1,9 @@
+torch
+protobuf
+transformers
+sentencepiece
+sacremoses
+tqdm
+art
+rich
+typer

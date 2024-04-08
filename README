@@ -1,0 +1,18 @@
+its a file creates a directory of common things u need to have
+to study well and things u should search about and lists u should complete
+i will list all the highlights here
+
+structure:
+    language/
+        modules.txt
+        topics.txt
+        projects.txt
+        projects.txt
+        notes.text
+        readme.txt
+        resources/
+            it has a list of resources [.zip] dirs and files
+        content.txt
+            it will have the content of things u should learn about
+            like threading , regex , etc
+            and the subjects u should search about
