@@ -12,6 +12,9 @@ structure:
         readme.txt
         resources/
             it has a list of resources [.zip] dirs and files
+        framework/
+            this directory will have special framework and how its project structure look
+            and best practices
         content.txt
             it will have the content of things u should learn about
             like threading , regex , etc
