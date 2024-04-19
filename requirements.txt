@@ -1,6 +1,6 @@
 torch
 protobuf
-transformers
+transformers~=4.39.2
 sentencepiece
 sacremoses
 tqdm

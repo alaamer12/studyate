@@ -2,19 +2,54 @@ its a file creates a directory of common things u need to have
 to study well and things u should search about and lists u should complete
 i will list all the highlights here
 
+RULES:
+    u have to follow the indent structure across
+    all the file[s],
+    any line starts with `//` will be ignored
+    accepted extensions are '.txt', '.text', '.ate'
+
+Note:
+    for now the extension '.ate' do the same as '.txt'
+    but in the future this extension will be needed for special features
+
 structure:
-    language/
-        modules.txt
-        topics.txt
-        projects.txt
-        projects.txt
-        notes.text
-        readme.txt
+    {{language}}/
+        modules.txt: this file will have the modules u have to study or at least to know about,
+            we have provided rich content of categories for this directory, usually whatever the
+            language u are using u can goggle it and find its equivalent
+            in the other languages, although some libraries or modules don't have equivalent
+
+        topics.txt:  this file will have the topics u should search for,
+            like special functions in the language e.g. decorator, special field,
+            pros, cons, core
+
+        projects.txt: this file will have have numbered of project categorized
+            based on complexity
+
+        notes.text: this file will be ur guideline and main entry point also u
+            can name it index.txt, u have to write all ur notes alongside
+            ur journey in this file, NOTE any content u write in this
+            file have to follow simple rules then use our cli command
+            will manage to generate all the corresponding files
+
+        readme.txt: this file is like metadata about u or the study
+
         resources/
             it has a list of resources [.zip] dirs and files
+
         framework/
             this directory will have special framework and how its project structure look
             and best practices
+
+        design patterns/
+            this directory will have special design patterns and how
+            its project structure look
+
+        distributed systems/
+            this directory will have special distributed systems and how its
+            project structure look
+            and best practices
+
         content.txt
             it will have the content of things u should learn about
             like threading , regex , etc
