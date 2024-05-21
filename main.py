@@ -1,29 +1,39 @@
+import typer
+from commands.init import Init
+from commands.this_file import ThisFile
+from commands.create import Create
+from helpers.constants import EXTENSIONS
 
-def notes_block(file_path):
-    blocks = {}
-    with open(file_path, 'r') as file:
-        current_note = None
-        current_block = ""
-        for line in file:
-            line = line.rstrip('\n')
-            if not line.strip() or line.strip().startswith('//'):  # Skip empty lines or comments
-                continue
-            indent_level = len(line) - len(line.lstrip())
-            note_name = line.strip()
-            if indent_level == 0:
-                if current_note is not None:
-                    blocks[current_note] = current_block
-                current_note = note_name
-                current_block = ""
-            else:
-                current_block += line + "\n"
-        if current_note is not None:
-            blocks[current_note] = current_block
-    return blocks
+app = typer.Typer()
 
 
-if __name__ == '__main__':
-    # Example usage
-    file_path = 'x.txt'  # Path to your file
-    tasks_dict = notes_block(file_path)
-    print(tasks_dict)
+# TODO: Validate the input
+@app.command(name='init')
+def init(name: str = typer.Argument(None), extension: str = typer.Option(EXTENSIONS.TXT.value)):
+    Init(main_dir_name=name, extension=extension).run()
+
+
+@app.command()
+def goodbye():
+    typer.echo('Goodbye!')
+
+
+@app.command()
+def create(path: str = typer.Argument(None), entry_point_file: str = typer.Option("index.txt"),
+           strict: bool = typer.Option(True)):
+    Create(path, entry_point_file, strict).run()
+
+
+@app.command()
+def update(name: str = typer.Argument(None), extension: str = typer.Option(EXTENSIONS.TXT.value)):
+    pass
+
+
+@app.command()
+def this_file(file_path: str = typer.Argument(None), out_dir: str = typer.Option("out"),
+              extension: str = typer.Option(EXTENSIONS.TXT.value)):
+    ThisFile(file_path, out_dir, extension).run()
+
+
+if __name__ == "__main__":
+    app()
